@@ -1,28 +1,23 @@
 {
   "name": "new-file-in-split-editor",
   "displayName": "New File in Split Editor",
-  "description": "This extension for Visual Studio Code allows users to quickly open a new file in a split editor view using the shortcut Ctrl + Alt + N.",
+  "description": "Description of your extension",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.50.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:extension.openSplitWindow"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "extension.openSplitWindow",
-        "title": "Open New File in Split Window"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "extension.openSplitWindow",
-        "key": "ctrl+alt+n",
-        "mac": "cmd+alt+n"
+        "title": "Open New File in Split Editor"
       }
     ]
   },
@@ -32,17 +27,22 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "vscode-test"
+    "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
-    "@types/mocha": "^10.0.6",
-    "@types/node": "18.x",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "eslint": "^8.56.0",
-    "typescript": "^5.3.3",
-    "@vscode/test-cli": "^0.0.4",
-    "@vscode/test-electron": "^2.3.8"
-  }
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.50.0",
+    "eslint": "^7.10.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "typescript": "^4.0.3",
+    "vscode-test": "^1.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bentowle/new-file-in-split-editor.git"
+  },
+  "publisher": "lowend"
 }
