@@ -9,15 +9,18 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:extension.openSplitWindow"
-  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "extension.openSplitWindow",
         "title": "Open New File in Split Editor"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.openSplitWindow",
+        "key": "ctrl+alt+n"
       }
     ]
   },
